@@ -188,12 +188,12 @@ function setDefaultProfImg(img){
           
           {/* Main Code */}
           <div className='container'>
-            <div className='row mt-5 px-md-5 px-sm-0 mb-2 mx-auto'>
-              <div className='col-7 px-0'>
+            <div className='row mt-5 px-5 mb-2 marginFix'>
+              <div className='col-md-8 px-0'>
               <span className='text-secondary'><h1 className='heading'><i className='fa-solid fa-graduation-cap'></i> Learn In Public</h1></span>
                 <p>Learning to code is hard, why do it alone? Share your profile, accomplishments and frustrations with the rest of the 4Geeks community!</p>
               </div>
-              <div className='col-5'>
+              <div className='col-md-4'>
                 <button className='btn btn-light w-100 py-2 whiteBtn' onClick={()=>addProfileInst == 'addProfInvis' ? setAddProfileInst('addProfVis') : setAddProfileInst('addProfInvis')}><span className='lrgBtnText'><i className='fa-solid fa-circle-plus text-success'></i> Add yourself to this list</span></button>
                 <button className='btn btn-primary w-100 py-2 mt-2' onClick={()=>setModalShow('showModal')}><span className='lrgBtnText'><i className='fa-solid fa-share-nodes'></i> Share Your commitment</span></button>
               </div>
@@ -205,7 +205,7 @@ function setDefaultProfImg(img){
             </div>
 
             {/*Add Profile Instructions*/}
-            <div className={`row px-4 mt-4 rounded ${addProfileInst}`}>
+            <div className={`row px-4 mt-4 rounded addProfInstructions ${addProfileInst}`}>
               <h3 className='text-secondary mt-3 heading'>How can you add yourself to this list?</h3>
                 <div>
                   <h4 className='mb-0 text-secondary'><i className='fa-solid fa-1'></i> Create a student YML</h4>

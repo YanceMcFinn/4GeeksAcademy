@@ -188,12 +188,12 @@ function setDefaultProfImg(img){
           
           {/* Main Code */}
           <div className='container'>
-            <div className='row mt-5 px-md-5 px-sm-0 mb-2 mx-auto'>
-              <div className='col-7 px-0'>
+            <div className='row mt-5 px-5 mb-2 marginFix'>
+              <div className='col-md-8 px-0'>
               <span className='text-secondary'><h1 className='heading'><i className='fa-solid fa-graduation-cap'></i> Learn In Public</h1></span>
                 <p>Learning to code is hard, why do it alone? Share your profile, accomplishments and frustrations with the rest of the 4Geeks community!</p>
               </div>
-              <div className='col-5'>
+              <div className='col-md-4'>
                 <button className='btn btn-light w-100 py-2 whiteBtn' onClick={()=>addProfileInst == 'addProfInvis' ? setAddProfileInst('addProfVis') : setAddProfileInst('addProfInvis')}><span className='lrgBtnText'><i className='fa-solid fa-circle-plus text-success'></i> Add yourself to this list</span></button>
                 <button className='btn btn-primary w-100 py-2 mt-2' onClick={()=>setModalShow('showModal')}><span className='lrgBtnText'><i className='fa-solid fa-share-nodes'></i> Share Your commitment</span></button>
               </div>
@@ -205,7 +205,7 @@ function setDefaultProfImg(img){
             </div>
 
             {/*Add Profile Instructions*/}
-            <div className={`row px-4 mt-4 rounded ${addProfileInst}`}>
+            <div className={`row px-4 mt-4 rounded addProfInstructions ${addProfileInst}`}>
               <h3 className='text-secondary mt-3 heading'>How can you add yourself to this list?</h3>
                 <div>
                   <h4 className='mb-0 text-secondary'><i className='fa-solid fa-1'></i> Create a student YML</h4>
@@ -226,12 +226,12 @@ function setDefaultProfImg(img){
               <button className='btn btn-primary mb-4' onClick={()=>setAddProfileInst('addProfInvis')}>Close these instructions</button>
             </div>
 
-            <div className='row px-md-5 px-sm-0 mt-2 mx-auto'>
+            <div className='row px-5 mt-2 marginFix'>
               <input type='text' value={searchFilter} onChange={handleChange} className='w-100 form-control mb-3' placeholder='Type student name to search'></input>
             </div>
 
 
-              <div className='row justify-content-center px-md-5 px-sm-0'>
+              <div className='row justify-content-center px-md-5 px-sm-0 studentProfContainer'>
                 {resumes != [] ? resumes.map((resume)=>{
                   return (<StudentListing name={`${resume.basic_info.first_name} ${resume.basic_info.last_name}`} motto={resume.basic_info.motto} portfolioUrl={resume.basic_info.website} twitter={resume.basic_info.twitter} linkedIn={resume.basic_info.linkedin} gitHub={resume.basic_info.github} HTMLonClick={()=>{ setHTMLResume(resume); handleResume(resume);}} />)
                 }) : <div><p><i>Theres is nothing to show</i></p></div>}
@@ -254,12 +254,12 @@ function setDefaultProfImg(img){
   function StudentListing (props){
     
     return (
-        <div className='studentRow row p-1 justify-content-around'>
+        <div className='studentRow row p-1 flex'>
             <div className='col-md-6 float-start text-secondary d-inline-block text-wrap'>
-                <div className='studentName'>{props.name}</div>
-                <div className='motto'>{props.motto}</div>
+                <p className='studentName'>{props.name}</p>
+                <p className='motto'>{props.motto}</p>
             </div>
-            <div className='col-md-6 float-end d-flex align-items-start justify-content-md-end justify-content-sm-start py-2'>
+            <div className='col-md-6 float-md-end d-flex align-items-start justify-content-end py-2'>
                 {props.portfolioUrl && props.portfolioUrl != undefined ? <a href={`https://${props.portfolioUrl}`} target='_blank'><button className='btn whiteBtn mx-1'><i className='fa-solid fa-palette'></i> Portfolio</button></a> : null}
                 {props.twitter && props.twitter != undefined ? <a href={`https://twitter.com/${props.twitter}`} target='_blank'><button className='btn whiteBtn mx-1'><i className='fa-brands fa-twitter linkBtnIcon'></i></button></a> : null}
                 {props.linkedIn && props.linkedIn != undefined ? <a href={props.linkedIn} target='_blank'><button className='btn whiteBtn mx-1'><i className='fa-brands fa-linkedin linkBtnIcon'></i></button></a> : null}

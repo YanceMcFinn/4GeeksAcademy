@@ -205,7 +205,7 @@ function setDefaultProfImg(img){
             </div>
 
             {/*Add Profile Instructions*/}
-            <div className={`row px-4 mt-4 rounded ${addProfileInst}`}>
+            <div className={`row px-4 mt-4 rounded addProfInstructions ${addProfileInst}`}>
               <h3 className='text-secondary mt-3 heading'>How can you add yourself to this list?</h3>
                 <div>
                   <h4 className='mb-0 text-secondary'><i className='fa-solid fa-1'></i> Create a student YML</h4>
